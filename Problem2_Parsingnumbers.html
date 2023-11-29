@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parsing numbers</title>
+    <style>
+        table, th, td {
+          border:1px solid black;
+        }
+        </style>
+        <script>
+            var arr=[
+                p1='1234',
+                p2='1234abc',
+                
+
+            ]
+
+            
+        </script>
+</head>
+<body>
+    <table >
+        <tr >
+            <td >str</td>
+            <td>parseInt(str)</td>
+            <td>parseFloat(str)</td>
+            <td>Number(str)</td>
+            <td>+str</td>
+            <td>str|0</td>
+        </tr>
+
+        <tr>
+            <td>1234</td>
+            <td><script>document.writeln( parseInt(1234));</script></td>
+            <td><script>document.writeln( parseFloat(1234));</script></td>
+            <td><script>document.writeln( Number(1234));</script></td>
+            <td><script>document.writeln( +(1234));</script></td>
+            <td><script>document.writeln((1234)|0);</script></td>
+        </tr>
+        <tr>
+            <td>1234abc</td>
+            <td><script>document.writeln( parseInt('1234abc'));</script></td>
+            <td><script>document.writeln( parseFloat('1234abc'));</script></td>
+            <td><script>document.writeln( Number('1234abc'));</script></td>
+            <td><script>document.writeln( +('1234abc'));</script></td>
+            <td><script>document.writeln(('1234abc')|0);</script></td>
+        </tr>
+        <tr>
+            <td>0.15</td>
+            <td><script>document.writeln( parseInt(0.15));</script></td>
+            <td><script>document.writeln( parseFloat(0.15));</script></td>
+            <td><script>document.writeln( Number(0.15));</script></td>
+            <td><script>document.writeln( +(0.15));</script></td>
+            <td><script>document.writeln((0.15)|0);</script></td>
+        </tr>
+        <tr>
+            <td>3.14ivan</td>
+            <td><script>document.writeln( parseInt('3.14ivan'));</script></td>
+            <td><script>document.writeln( parseFloat('3.14ivan'));</script></td>
+            <td><script>document.writeln( Number('3.14ivan'));</script></td>
+            <td><script>document.writeln( +('3.14ivan'));</script></td>
+            <td><script>document.writeln(('3.14ivan')|0);</script></td>
+        </tr>
+        <tr>
+            <td>Infinity</td>
+            <td><script>document.writeln( parseInt(Infinity));</script></td>
+            <td><script>document.writeln( parseFloat(Infinity));</script></td>
+            <td><script>document.writeln( Number(Infinity));</script></td>
+            <td><script>document.writeln( +(Infinity));</script></td>
+            <td><script>document.writeln((Infinity)|0);</script></td>
+        </tr>
+        <tr>
+            <td>999999999999999</td>
+            <td><script>document.writeln( parseInt(999999999999999));</script></td>
+            <td><script>document.writeln( parseFloat(999999999999999));</script></td>
+            <td><script>document.writeln( Number(999999999999999));</script></td>
+            <td><script>document.writeln( +(999999999999999));</script></td>
+            <td><script>document.writeln((999999999999999)|0);</script></td>
+        </tr>
+       
+
+    </table>
+</body>
+</html>

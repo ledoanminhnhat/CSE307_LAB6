@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ShowData() {
+            var val = document.getElementById('p1').innerText;
+            document.getElementById('p2').innerHTML = parseInt(val);
+            document.getElementById('p6').innerHTML = val | 0;
+        }
+        var arr = [
+            {
+                title: 'Learning How to learn',
+                image: 'https://i.dummyjson.com/data/products/3/thumbnail.jpg',
+                price: 251100,
+                quantity: 100
+            },
+            {
+                title: 'How to learn',
+                image: 'https://i.dummyjson.com/data/products/26/thumbnail.jpg',
+                price: 131100,
+                quantity: 200
+            },
+            {
+                title: 'to learn',
+                image: 'https://i.dummyjson.com/data/products/2/thumbnail.jpg',
+                price: 301100,
+                quantity: 300
+            }
+        ];
+        function compare(a, b) {
+            if (b.title > a.title) return 1;
+            if (b.title < a.title) return -1;
+            return 0;
+        }
+     
+        function Show() {
+            arr.sort(compare)
+            var str = '';
+         
+            for (i = 0; i < arr.length; i++) {
+                str += `<div style='border-style:solid;flex:30%'><div >${arr[i].title} </div> 
+                <img width='100px' src='${arr[i].image}' /> 
+                <div>${arr[i].price} VND</div></div>`;
+            }
+            document.getElementById("result").innerHTML = str;
+        }
+        function AddHead(){
+            productName = document.getElementById('productName').value;
+            quantity = document.getElementById('quantity').value;
+            price = document.getElementById('price').value;
+            image = document.getElementById('image').value;
+            arr.push({title:productName,image,price,quantity});
+            Show();
+        } 
+        function AddTale(){
+            productName = document.getElementById('productName').value;
+            quantity = document.getElementById('quantity').value;
+            price = document.getElementById('price').value;
+            image = document.getElementById('image').value;
+            arr.push({title:productName,image,price,quantity});
+            Show();
+        } 
+    </script>
+</head>
+
+<body onload="Show()">
+    <div style='border-style:solid;display:flex;' id='result'>    </div>
+    <p/><label for="productName">Product Name:</label>
+    <input type="text" id="productName" name="productName" required>
+    <p/><label for="quantity">Quantity:</label>
+    <input type="number" id="quantity" name="quantity" required>
+    <p/><label for="price">Price:</label>
+    <input type="number" id="price" name="price" step="0.01" required>
+    <p/><label for="image">Image:</label>
+    <input type="text" id="image" name="image" accept="image/*">
+    <p/><button type="button" onclick="AddHead()">Add head</button>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Compare Array of Objects</title>
+        <script>
+        var arr = [
+            {
+                title: 'The Alchemist',
+                image: 'https://tse1.mm.bing.net/th?id=OIP._Rq51bCQK-G_VeoVAxe4CQHaLO&pid=Api&P=0&h=180',
+                price: 182700
+            },
+            {
+                title: 'Learning How to Learn',
+                image: 'https://tse2.mm.bing.net/th?id=OIP.FIh5EcFLw-OkfIQqeg7CJwHaLH&pid=Api&P=0&h=180',
+                price: 251100
+            },
+            {
+                title: 'Thinking, Fast and Slow',
+                image: 'https://tse3.mm.bing.net/th?id=OIP.s5WcDF-PS9ychAPHvCcGSgHaK-&pid=Api&P=0&h=180',
+                price: 299700
+            }
+        ];
+        function compare(a,b)
+        {
+           a.price-b.price;
+           return
+        }
+        function Show() {
+            arr.sort(compare)
+            var str = '';
+            document.writeln("<div style = 'display:flex;' id='result'>    </div>");
+            for(i = 0;i<arr.length;i++)
+            {
+                str += `<div style='flex:30%; border:1px solid black ;text-align:center;font-weight: bold'><div >${arr[i].title} </div> <img width='100px' 
+                src='${arr[i].image}' /> 
+                <div style='text-align:center;'>${arr[i].price} VND</div></div>`;
+            }
+            document.getElementById("result").innerHTML += str;
+        }
+        </script>
+
+   
+    </head>
+<body onload="Show()">
+    
+    
+</body>
+</html>
